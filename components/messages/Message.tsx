@@ -3,7 +3,7 @@
 
 import { deleteMessage } from "@/components/messages/actions";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LoaderCircleIcon } from "lucide-react";
 
 const handleDeleteClick = async (id: string) => {
@@ -27,6 +27,10 @@ export type MessageType = {
 export const Message = ({ message }: { message: MessageType }) => {
   const router = useRouter();
   const [deleting, setDeleting] = useState(false);
+  const [createdAgo, setCreatedAgo] = useState<string | null>(null);
+  useEffect(() => {
+    setCreatedAgo(timeAgo(message.created_at));
+  }, [message.created_at]);
 
   return (
     <div
@@ -36,7 +40,13 @@ export const Message = ({ message }: { message: MessageType }) => {
     >
       <div>
         <div className="font-semibold mb-1">{message.metadata.message}</div>
-        <div className="text-sm">{timeAgo(message.created_at)}</div>
+        <div className="text-sm h-4">
+          {createdAgo ? (
+            createdAgo
+          ) : (
+            <LoaderCircleIcon className="w-4 h-4 animate-spin" />
+          )}
+        </div>
       </div>
       {message.metadata?.image?.imgix_url && (
         <a
