@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Loader2, XCircle } from "lucide-react";
+import { CheckCircle, Loader2, XCircle, SendIcon } from "lucide-react";
 import { cn } from "@/cosmic/utils";
 
 import { Button } from "@/cosmic/elements/Button";
@@ -63,7 +63,7 @@ export function MessageForm({ className }: { className?: string }) {
     <div className={cn("mb-8", className)}>
       <h2 className="mb-4 text-2xl">Message</h2>
       {error && (
-        <div className="mb-4 flex rounded-xl border border-red-500 p-8">
+        <div className="mb-4 flex rounded-xl border border-red-500 text-red-500 p-8">
           <XCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />
           There was an error with your request. Make sure all fields are valid.
         </div>
@@ -106,14 +106,17 @@ export function MessageForm({ className }: { className?: string }) {
               Sending...
             </>
           ) : (
-            `Send`
+            <>
+              <SendIcon className="mr-2 h-4 w-4" />
+              Send
+            </>
           )}
         </Button>
       </div>
       {sumbitted && (
-        <div className="mt-6 flex rounded-xl border border-green-500 p-8">
+        <div className="mt-6 flex rounded-xl border border-green-500 text-green-500 p-8">
           <CheckCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-green-500" />
-          Message submitted.
+          Message sent.
         </div>
       )}
     </div>
