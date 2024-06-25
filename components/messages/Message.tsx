@@ -40,7 +40,7 @@ export const Message = ({ message }: { message: MessageType }) => {
       </div>
       {message.metadata?.image?.imgix_url && (
         <a
-          href={`${message.metadata?.image?.imgix_url}?w=600&auto=format,compression`}
+          href={`${message.metadata?.image?.imgix_url}?w=1200&auto=format,compression`}
           target="_blank"
           className="mt-4 block w-[200px]"
         >
