@@ -48,6 +48,9 @@ export function FileUpload({
     useDropzone({
       onDrop,
       maxSize,
+      accept: {
+        "image/*": [".png", ".gif", ".jpeg", ".jpg"],
+      },
     });
 
   async function handleSubmit() {

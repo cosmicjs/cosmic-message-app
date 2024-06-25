@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { deleteMessage } from "@/cosmic/blocks/messages/actions";
+import { deleteMessage } from "@/components/messages/actions";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { LoaderCircleIcon } from "lucide-react";
@@ -38,7 +38,11 @@ export const Message = ({ message }: { message: MessageType }) => {
         <div className="font-semibold col-span-3">
           {message.metadata.message}
         </div>
-        <div className="absolute right-0 top-0 p-6">
+        <div
+          className={`absolute right-0 top-0 p-6 ${
+            !message.metadata?.image?.imgix_url ? "right-4" : "right-0"
+          }`}
+        >
           {timeAgo(message.created_at)}
         </div>
       </div>
@@ -55,7 +59,11 @@ export const Message = ({ message }: { message: MessageType }) => {
           />
         </a>
       )}
-      <div className="absolute right-0 bottom-0 p-4">
+      <div
+        className={`absolute right-0 p-4 ${
+          !message.metadata?.image?.imgix_url ? "top-3" : "bottom-0"
+        }`}
+      >
         {deleting ? (
           <LoaderCircleIcon className="text-red-500 w-4 h-4 m-auto animate-spin" />
         ) : (

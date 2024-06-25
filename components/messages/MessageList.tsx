@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { cosmic } from "@/cosmic/client";
-import { Message, MessageType } from "@/cosmic/blocks/messages/Message";
+import { Message, MessageType } from "@/components/messages/Message";
 
 export async function MessageList({ className }: { className: string }) {
   try {

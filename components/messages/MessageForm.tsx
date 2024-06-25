@@ -7,7 +7,7 @@ import { cn } from "@/cosmic/utils";
 
 import { Button } from "@/cosmic/elements/Button";
 import { Textarea } from "@/cosmic/elements/TextArea";
-import { addMessage, AddMessageType } from "@/cosmic/blocks/messages/actions";
+import { addMessage, AddMessageType } from "@/components/messages/actions";
 import { FileUpload, FileType } from "@/cosmic/blocks/file-upload/FileUpload";
 import { useRouter } from "next/navigation";
 
@@ -21,6 +21,7 @@ export function MessageForm({ className }: { className?: string }) {
   async function handleSubmitComment(e: React.SyntheticEvent) {
     setError(false);
     setSubmitting(true);
+    setMessage(message.trim());
     if (!message.trim()) {
       setSubmitting(false);
       setError(true);
@@ -63,9 +64,9 @@ export function MessageForm({ className }: { className?: string }) {
     <div className={cn("mb-8", className)}>
       <h2 className="mb-4 text-2xl">Send a message</h2>
       {error && (
-        <div className="mb-4 flex rounded-xl border border-red-500 text-red-500 p-8">
+        <div className="mb-4 flex rounded-xl border border-red-500 text-red-500 p-4">
           <XCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />
-          There was an error with your request. Make sure all fields are valid.
+          Message required.
         </div>
       )}
       <div className="mb-4">
@@ -74,7 +75,8 @@ export function MessageForm({ className }: { className?: string }) {
           placeholder="What's happening?"
           onChange={handleChangeMessage}
           value={message}
-          className="text-base"
+          className={`text-base ${error ? "!border-red-500" : ""}`}
+          onClick={() => setError(false)}
         />
       </div>
       <div className="h-[140px] overflow-hidden">
@@ -115,7 +117,7 @@ export function MessageForm({ className }: { className?: string }) {
         </Button>
       </div>
       {sumbitted && (
-        <div className="mt-6 flex rounded-xl border border-green-500 text-green-500 p-8">
+        <div className="mt-6 flex rounded-xl border border-green-500 text-green-500 p-4">
           <CheckCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-green-500" />
           Message sent.
         </div>
