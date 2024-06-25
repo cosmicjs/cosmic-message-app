@@ -41,18 +41,17 @@ export const Message = ({ message }: { message: MessageType }) => {
         </div>
       </div>
       {message.metadata?.image?.imgix_url && (
-        <div className="mt-4">
-          <a
-            href={`${message.metadata?.image?.imgix_url}?w=600&auto=format,compression`}
-            target="_blank"
-          >
-            <img
-              src={`${message.metadata?.image?.imgix_url}?w=600&auto=format,compression`}
-              alt={message.metadata?.image?.imgix_url}
-              className="h-[150px] w-[200px] rounded-xl object-cover"
-            />
-          </a>
-        </div>
+        <a
+          href={`${message.metadata?.image?.imgix_url}?w=600&auto=format,compression`}
+          target="_blank"
+          className="mt-4 block w-[200px]"
+        >
+          <img
+            src={`${message.metadata?.image?.imgix_url}?w=600&auto=format,compression`}
+            alt={message.metadata?.image?.imgix_url}
+            className="h-[150px] w-[200px] rounded-xl object-cover"
+          />
+        </a>
       )}
       <div className="absolute right-0 bottom-0 p-4">
         {deleting ? (
