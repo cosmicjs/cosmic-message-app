@@ -28,7 +28,11 @@ export const Message = ({ message }: { message: MessageType }) => {
   const [deleting, setDeleting] = useState(false);
 
   return (
-    <div className="mb-8 border rounded-xl p-6 relative bg-white dark:bg-gray-900">
+    <div
+      className={`mb-8 border rounded-xl p-6 relative bg-white dark:bg-gray-900 ${
+        deleting ? "opacity-55" : ""
+      }`}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div className="font-semibold">{message.metadata.message}</div>
         <div className="absolute right-0 top-0 p-6">
@@ -59,7 +63,6 @@ export const Message = ({ message }: { message: MessageType }) => {
               setDeleting(true);
               await handleDeleteClick(message.id);
               router.refresh();
-              setDeleting(false);
             }}
           />
         )}
