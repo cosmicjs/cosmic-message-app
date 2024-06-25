@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import { CheckCircle, Loader2, XCircle, SendIcon } from "lucide-react";
 import { cn } from "@/cosmic/utils";
 
@@ -18,7 +18,7 @@ export function MessageForm({ className }: { className?: string }) {
   const [sumbitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const router = useRouter();
-  async function handleSubmitComment(e: React.SyntheticEvent) {
+  async function handleSubmitMessage() {
     setError(false);
     setSubmitting(true);
     setMessage(message.trim());
@@ -60,6 +60,11 @@ export function MessageForm({ className }: { className?: string }) {
     const target = e.target as HTMLInputElement;
     setMessage(target.value);
   }
+  function handleKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
+    if (e.metaKey && e.key === "Enter") {
+      handleSubmitMessage();
+    }
+  }
   return (
     <div className={cn("mb-8", className)}>
       <h2 className="mb-4 text-2xl">Send a message</h2>
@@ -74,6 +79,7 @@ export function MessageForm({ className }: { className?: string }) {
           id="message"
           placeholder="What's happening?"
           onChange={handleChangeMessage}
+          onKeyDown={handleKeyDown}
           value={message}
           className={`text-base ${error ? "!border-red-500" : ""}`}
           onClick={() => setError(false)}
@@ -100,7 +106,7 @@ export function MessageForm({ className }: { className?: string }) {
       </div>
       <div>
         <Button
-          onClick={handleSubmitComment}
+          onClick={handleSubmitMessage}
           type="submit"
           disabled={submitting || !message.trim()}
         >
