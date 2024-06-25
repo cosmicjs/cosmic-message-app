@@ -34,8 +34,10 @@ export const Message = ({ message }: { message: MessageType }) => {
         deleting ? "opacity-55" : ""
       }`}
     >
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        <div className="font-semibold">{message.metadata.message}</div>
+      <div className="grid grid-cols-1 md:grid-cols-4">
+        <div className="font-semibold col-span-3">
+          {message.metadata.message}
+        </div>
         <div className="absolute right-0 top-0 p-6">
           {timeAgo(message.created_at)}
         </div>

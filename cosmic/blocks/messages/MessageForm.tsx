@@ -7,7 +7,7 @@ import { cn } from "@/cosmic/utils";
 
 import { Button } from "@/cosmic/elements/Button";
 import { Textarea } from "@/cosmic/elements/TextArea";
-import { addMessage, MessageType } from "@/cosmic/blocks/messages/actions";
+import { addMessage, AddMessageType } from "@/cosmic/blocks/messages/actions";
 import { FileUpload, FileType } from "@/cosmic/blocks/file-upload/FileUpload";
 import { useRouter } from "next/navigation";
 
@@ -26,9 +26,9 @@ export function MessageForm({ className }: { className?: string }) {
       setError(true);
       return;
     }
-    const submission: MessageType = {
+    const submission: AddMessageType = {
       type: "messages",
-      title: message,
+      title: message.substring(0, 60), // Limit title length
       metadata: {
         image: image?.name,
         message,
@@ -61,7 +61,7 @@ export function MessageForm({ className }: { className?: string }) {
   }
   return (
     <div className={cn("mb-8", className)}>
-      <h2 className="mb-4 text-2xl">Message</h2>
+      <h2 className="mb-4 text-2xl">Send a message</h2>
       {error && (
         <div className="mb-4 flex rounded-xl border border-red-500 text-red-500 p-8">
           <XCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />
@@ -71,7 +71,7 @@ export function MessageForm({ className }: { className?: string }) {
       <div className="mb-4">
         <Textarea
           id="message"
-          placeholder="Message"
+          placeholder="What's happening?"
           onChange={handleChangeMessage}
           value={message}
           className="text-base"

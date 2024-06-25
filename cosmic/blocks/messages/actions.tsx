@@ -1,7 +1,7 @@
 "use server";
 import { cosmic } from "@/cosmic/client";
 
-export type MessageType = {
+export type AddMessageType = {
   type: "messages";
   title: string;
   metadata: {
@@ -10,7 +10,7 @@ export type MessageType = {
   };
 };
 
-export async function addMessage(message: MessageType) {
+export async function addMessage(message: AddMessageType) {
   const data = await cosmic.objects.insertOne(message);
   return data;
 }
