@@ -101,7 +101,7 @@ export function MessageForm({ className }: { className?: string }) {
         <Button
           onClick={handleSubmitComment}
           type="submit"
-          disabled={submitting}
+          disabled={submitting || !message.trim()}
         >
           {submitting ? (
             <>
