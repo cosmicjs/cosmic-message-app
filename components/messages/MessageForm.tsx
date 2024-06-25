@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, KeyboardEvent } from "react";
-import { CheckCircle, Loader2, XCircle, SendIcon } from "lucide-react";
+import { CheckIcon, Loader2, XIcon, SendIcon } from "lucide-react";
 import { cn } from "@/cosmic/utils";
 
 import { Button } from "@/cosmic/elements/Button";
@@ -70,7 +70,7 @@ export function MessageForm({ className }: { className?: string }) {
       <h2 className="mb-4 text-2xl">Send a message</h2>
       {error && (
         <div className="mb-4 flex rounded-xl border border-red-500 text-red-500 p-4">
-          <XCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />
+          <XIcon className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />
           Message required.
         </div>
       )}
@@ -125,7 +125,7 @@ export function MessageForm({ className }: { className?: string }) {
       </div>
       {sumbitted && (
         <div className="mt-6 flex rounded-xl border border-green-500 text-green-500 p-4">
-          <CheckCircle className="shrink-0 relative top-1 mr-4 h-4 w-4 text-green-500" />
+          <CheckIcon className="shrink-0 relative top-1 mr-4 h-4 w-4 text-green-500" />
           Message sent.
         </div>
       )}
