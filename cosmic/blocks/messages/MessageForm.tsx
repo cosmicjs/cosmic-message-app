@@ -74,6 +74,7 @@ export function MessageForm({ className }: { className?: string }) {
           placeholder="Message"
           onChange={handleChangeMessage}
           value={message}
+          className="text-base"
         />
       </div>
       <div className="h-[140px] overflow-hidden">
