@@ -103,10 +103,10 @@ export function MessageForm({ className }: { className?: string }) {
           {submitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Submitting...
+              Sending...
             </>
           ) : (
-            `Submit`
+            `Send`
           )}
         </Button>
       </div>
