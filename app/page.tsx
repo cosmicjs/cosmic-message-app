@@ -1,5 +1,6 @@
 import { MessageForm } from "@/cosmic/blocks/messages/MessageForm";
 import { MessageList } from "@/cosmic/blocks/messages/MessageList";
+export const dynamic = "force-dynamic";
 
 export default function Home() {
   return (
