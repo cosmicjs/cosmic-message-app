@@ -89,7 +89,7 @@ export function FileUpload({
           <UploadIcon className="w-10 h-10 m-auto" />
         </div>
       ) : (
-        <div className="p-10 m-[18px]">
+        <div className="p-10">
           <LoaderCircleIcon className="w-10 h-10 m-auto animate-spin" />
         </div>
       )}
