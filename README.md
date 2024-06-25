@@ -1,8 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cosmic Message App
+
+[[View Live Demo](https://cosmic-message-app.vercel.app/)]
+
+A message app that shows you how to add text and upload media to the Cosmic CMS using the Next.js, [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), and React Server Actions.
+
+## Features
+
+- React Server Components
+- Server Actions (No exposed API keys)
+- Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+First, clone this repo.
+
+```bash
+git clone https://github.com/cosmicjs/cosmic-next-todo
+cd cosmic-next-todo
+```
+
+Then install packages.
+
+```bash
+npm i
+# or
+yarn
+# or
+pnpm
+# or
+bun i
+```
+
+## Create Project in Cosmic
+
+Log in to the [Cosmic dashboard](https://app.cosmicjs.com/) and create a new empty Project.
+![Create Project](https://imgix.cosmicjs.com/43a54cf0-3333-11ef-a504-63e081e4680f-message-app-model-settings.png?w=2000&auto=forat,compression)
+
+Create an Object type `Messages` (multiple) with slug `messages`:
+![Create Object Type](https://imgix.cosmicjs.com/01289440-3333-11ef-a504-63e081e4680f-message-app-model.png?w=2000&auto=forat,compression)
+
+Add the following Image and Markdown Metafields with keys `image` and `message`.
+![Add completed Metafield](https://imgix.cosmicjs.com/01289440-3333-11ef-a504-63e081e4680f-message-app-model.png?w=2000&auto=forat,compression)
+
+Then copy the `.env.copy` to a new `.env.local` file. And add your API keys found in the Cosmic dashboard at _Project / API keys_.
+
+```
+# .env.local
+COSMIC_BUCKET_SLUG=your_bucket_slug
+COSMIC_READ_KEY=your_bucket_read_key
+COSMIC_WRITE_KEY=your_bucket_write_key
+```
+
+## Run the app
+
+Then run the development server:
 
 ```bash
 npm run dev
@@ -14,23 +65,8 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see your message app. Add / delete your messages. See your messages in the Cosmic dashboard as well.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions welcome!
