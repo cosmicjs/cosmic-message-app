@@ -85,6 +85,7 @@ export function MessageForm({ className }: { className?: string }) {
           />
         ) : (
           <FileUpload
+            className="bg-white dark:bg-gray-900 rounded-xl"
             autoUpload
             onComplete={(response) => {
               // Do something with the response here

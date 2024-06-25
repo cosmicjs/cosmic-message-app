@@ -14,3 +14,8 @@ export async function addMessage(message: MessageType) {
   const data = await cosmic.objects.insertOne(message);
   return data;
 }
+
+export async function deleteMessage(id: string) {
+  const data = await cosmic.objects.deleteOne(id);
+  return data;
+}
