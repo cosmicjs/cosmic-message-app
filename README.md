@@ -1,6 +1,6 @@
 # Cosmic Message App
 
-![ToDo app screenshot](https://imgix.cosmicjs.com/6ab8d9f0-3334-11ef-a504-63e081e4680f-message-app-screenshot.png?w=2000&auto=forat,compression)
+![Message app screenshot](https://imgix.cosmicjs.com/6ab8d9f0-3334-11ef-a504-63e081e4680f-message-app-screenshot.png?w=2000&auto=forat,compression)
 
 [[View Live Demo](https://cosmic-message-app.vercel.app/)]
 
