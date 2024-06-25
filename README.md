@@ -15,8 +15,8 @@ A message app that shows you how to add text and upload media to the Cosmic CMS 
 First, clone this repo.
 
 ```bash
-git clone https://github.com/cosmicjs/cosmic-next-todo
-cd cosmic-next-todo
+git clone https://github.com/cosmicjs/cosmic-message-app
+cd cosmic-message-app
 ```
 
 Then install packages.
