@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Cosmic Message App",
   description:
-    "An example app showing you how to add text and upload media to the Cosmic CMS.",
+    "A message app that shows you how to add text and upload media to the Cosmic CMS.",
 };
 
 export default function RootLayout({
