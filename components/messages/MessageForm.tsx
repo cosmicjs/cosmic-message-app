@@ -77,6 +77,7 @@ export function MessageForm({ className }: { className?: string }) {
           value={message}
           className={`text-base ${error ? "!border-red-500" : ""}`}
           onClick={() => setError(false)}
+          autoFocus
         />
       </div>
       <div className="h-[140px] overflow-hidden">

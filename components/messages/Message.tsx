@@ -34,17 +34,9 @@ export const Message = ({ message }: { message: MessageType }) => {
         deleting ? "opacity-55" : ""
       }`}
     >
-      <div className="grid grid-cols-1 md:grid-cols-4">
-        <div className="font-semibold col-span-3">
-          {message.metadata.message}
-        </div>
-        <div
-          className={`absolute right-0 top-0 p-6 ${
-            !message.metadata?.image?.imgix_url ? "right-4" : "right-0"
-          }`}
-        >
-          {timeAgo(message.created_at)}
-        </div>
+      <div>
+        <div className="font-semibold mb-2">{message.metadata.message}</div>
+        <div className="text-sm">{timeAgo(message.created_at)}</div>
       </div>
       {message.metadata?.image?.imgix_url && (
         <a
@@ -59,11 +51,7 @@ export const Message = ({ message }: { message: MessageType }) => {
           />
         </a>
       )}
-      <div
-        className={`absolute right-0 p-4 ${
-          !message.metadata?.image?.imgix_url ? "top-3" : "bottom-0"
-        }`}
-      >
+      <div className="absolute right-0 bottom-0 p-4">
         {deleting ? (
           <LoaderCircleIcon className="text-red-500 w-4 h-4 m-auto animate-spin" />
         ) : (
