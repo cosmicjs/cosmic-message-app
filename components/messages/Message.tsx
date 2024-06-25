@@ -35,7 +35,7 @@ export const Message = ({ message }: { message: MessageType }) => {
       }`}
     >
       <div>
-        <div className="font-semibold mb-2">{message.metadata.message}</div>
+        <div className="font-semibold mb-1">{message.metadata.message}</div>
         <div className="text-sm">{timeAgo(message.created_at)}</div>
       </div>
       {message.metadata?.image?.imgix_url && (
