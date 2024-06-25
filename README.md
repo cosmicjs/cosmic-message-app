@@ -38,7 +38,7 @@ bun i
 Log in to the [Cosmic dashboard](https://app.cosmicjs.com/) and create a new empty Project.
 ![Create Project](https://imgix.cosmicjs.com/8e311430-0bd7-11ef-9eca-7d347081a9fb-create-new-project.png?w=2000&auto=forat,compression)
 
-Create an Object type `Messages` (multiple) with slug `messages`:
+Create the Message Object type (multiple) with slug `messages`:
 ![Create Object Type](https://imgix.cosmicjs.com/43a54cf0-3333-11ef-a504-63e081e4680f-message-app-model-settings.png?w=2000&auto=forat,compression)
 
 Add the following Image and Markdown Metafields with keys `image` and `message`.
