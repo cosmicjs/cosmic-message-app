@@ -1,15 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import { cosmic } from "@/cosmic/client";
 import { Message, MessageType } from "@/components/messages/Message";
+import { getMessages } from "@/components/messages/actions";
 
 export async function MessageList({ className }: { className: string }) {
   try {
-    const { objects: messages } = await cosmic.objects
-      .find({
-        type: "messages",
-      })
-      .sort("-created_at")
-      .props("title,metadata,id,created_at");
+    const messages = await getMessages();
     return (
       <div className={className}>
         {messages?.map((message: MessageType) => (
