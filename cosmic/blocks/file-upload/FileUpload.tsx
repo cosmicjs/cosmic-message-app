@@ -49,8 +49,6 @@ export function FileUpload({
       },
     });
 
-  console.log(filesInQueue, fileRejections);
-
   // Auto upload
   if (autoUpload && filesInQueue.length && !uploading && !uploadSuccess)
     handleSubmit();
