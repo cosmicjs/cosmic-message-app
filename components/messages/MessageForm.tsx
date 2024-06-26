@@ -67,7 +67,7 @@ export function MessageForm({ className }: { className?: string }) {
   }
   return (
     <div className={cn("mb-8", className)}>
-      <h2 className="mb-4 text-2xl">Send a message</h2>
+      <h2 className="mb-4 text-2xl font-semibold">Send a message</h2>
       {error && (
         <div className="mb-4 flex rounded-xl border border-red-500 text-red-500 p-4">
           <XIcon className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />
