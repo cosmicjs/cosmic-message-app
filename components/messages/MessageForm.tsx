@@ -102,6 +102,9 @@ export function MessageForm({ className }: { className?: string }) {
               if (response?.media?.length) setImage(response?.media[0]);
             }}
             maxSize={3000000}
+            accept={{
+              "image/*": [".png", ".gif", ".jpeg", ".jpg"],
+            }}
           />
         )}
       </div>

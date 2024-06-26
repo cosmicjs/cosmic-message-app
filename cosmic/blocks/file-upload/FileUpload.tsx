@@ -19,6 +19,8 @@ export function FileUpload({
   onComplete,
   maxSize,
   autoUpload,
+  accept,
+  maxFiles,
 }: {
   className?: string;
   onComplete: (response: {
@@ -28,6 +30,8 @@ export function FileUpload({
   }) => void;
   maxSize?: number;
   autoUpload?: boolean;
+  accept?: any;
+  maxFiles?: number;
 }) {
   const [filesInQueue, setFilesInQueue] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
@@ -44,9 +48,8 @@ export function FileUpload({
     useDropzone({
       onDrop,
       maxSize,
-      accept: {
-        "image/*": [".png", ".gif", ".jpeg", ".jpg"],
-      },
+      maxFiles,
+      accept,
     });
 
   // Auto upload
