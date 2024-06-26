@@ -89,7 +89,7 @@ export function MessageForm({ className }: { className?: string }) {
       <div className="min-h-[140px]">
         {image ? (
           <img
-            className="h-[120px] w-[180px] rounded-xl object-cover"
+            className="h-[120px] w-full rounded-xl object-cover"
             src={`${image.imgix_url}?w=600&h=600&fit=crop&auto=format,compression`}
             alt={image.name}
           />
@@ -110,6 +110,7 @@ export function MessageForm({ className }: { className?: string }) {
           onClick={handleSubmitMessage}
           type="submit"
           disabled={submitting || !message.trim()}
+          className="w-full py-6"
         >
           {submitting ? (
             <>
