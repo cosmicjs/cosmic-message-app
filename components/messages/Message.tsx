@@ -34,7 +34,7 @@ export const Message = ({ message }: { message: MessageType }) => {
 
   return (
     <div
-      className={`mb-8 border rounded-xl p-6 relative bg-white dark:bg-gray-900 ${
+      className={`mb-8 border rounded-xl p-6 pb-12 relative bg-white dark:bg-gray-900 ${
         deleting ? "opacity-55" : ""
       }`}
     >
@@ -52,21 +52,21 @@ export const Message = ({ message }: { message: MessageType }) => {
         <a
           href={`${message.metadata?.image?.imgix_url}?w=1200&auto=format,compression`}
           target="_blank"
-          className="mt-4 block w-[200px]"
+          className="mt-4 block w-full"
         >
           <img
             src={`${message.metadata?.image?.imgix_url}?w=600&auto=format,compression`}
             alt={message.metadata?.image?.imgix_url}
-            className="h-[150px] w-[200px] rounded-xl object-cover"
+            className="h-[250px] w-full rounded-xl object-cover"
           />
         </a>
       )}
       <div className="absolute right-0 bottom-0 p-4">
         {deleting ? (
-          <LoaderCircleIcon className="text-red-500 w-4 h-4 m-auto animate-spin" />
+          <LoaderCircleIcon className="w-4 h-4 m-auto animate-spin" />
         ) : (
           <TrashIcon
-            className="text-red-500 w-4 h-4 cursor-pointer"
+            className="w-4 h-4 cursor-pointer"
             onClick={async () => {
               setDeleting(true);
               await handleDeleteClick(message.id);
