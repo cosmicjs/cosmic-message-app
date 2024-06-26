@@ -6,7 +6,7 @@
 
 [[View Live Demo](https://cosmic-message-app.vercel.app/)]
 
-A message app that shows you how to add text and upload media to the Cosmic CMS using the Next.js, [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), [File Upload Block](https://blocks.cosmicjs.com/blocks/file-upload), and React Server Actions.
+A message app that shows you how to add text and upload media to the Cosmic CMS using Next.js, the [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), the [File Upload Block](https://blocks.cosmicjs.com/blocks/file-upload), and React Server Actions.
 
 ## Features
 
