@@ -86,7 +86,7 @@ export function MessageForm({ className }: { className?: string }) {
           autoFocus
         />
       </div>
-      <div className="h-[140px] overflow-hidden">
+      <div className="min-h-[140px]">
         {image ? (
           <img
             className="h-[120px] w-[180px] rounded-xl object-cover"
@@ -101,6 +101,7 @@ export function MessageForm({ className }: { className?: string }) {
               // Do something with the response here
               if (response?.media?.length) setImage(response?.media[0]);
             }}
+            maxSize={3000000}
           />
         )}
       </div>

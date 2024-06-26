@@ -34,10 +34,6 @@ export function FileUpload({
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [uploadError, setUploadError] = useState(false);
 
-  // Auto upload
-  if (autoUpload && filesInQueue.length && !uploading && !uploadSuccess)
-    handleSubmit();
-
   const onDrop = useCallback(
     (acceptedFiles: File[]) => {
       setFilesInQueue([...acceptedFiles, ...filesInQueue]);
@@ -52,6 +48,12 @@ export function FileUpload({
         "image/*": [".png", ".gif", ".jpeg", ".jpg"],
       },
     });
+
+  console.log(filesInQueue, fileRejections);
+
+  // Auto upload
+  if (autoUpload && filesInQueue.length && !uploading && !uploadSuccess)
+    handleSubmit();
 
   async function handleSubmit() {
     setUploading(true);
