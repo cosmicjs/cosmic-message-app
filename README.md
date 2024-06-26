@@ -1,6 +1,8 @@
 # Cosmic Message App
 
-![Message app screenshot](https://imgix.cosmicjs.com/6ab8d9f0-3334-11ef-a504-63e081e4680f-message-app-screenshot.png?w=2000&auto=forat,compression)
+<a href="https://cosmic-message-app.vercel.app/">
+  <img src="https://imgix.cosmicjs.com/41942a80-33d3-11ef-a504-63e081e4680f-cosmic-message-app.png?w=2000&auto=forat,compression" />
+</a>
 
 [[View Live Demo](https://cosmic-message-app.vercel.app/)]
 
